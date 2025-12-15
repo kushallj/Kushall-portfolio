@@ -9,32 +9,29 @@ const useWindowStore = create(
 
         openWindow: (windowKey, data = null) => set((state) => {
             const win = state.windows[windowKey];
-            if(!win) return;
-            if (win) {
-                win.isOpen = true;
-                win.zIndex = state.nextZIndex;
-                win.data = data ?? win.data;
-                state.nextZIndex++;
-            }
+            if (!win) return;
+            
+            win.isOpen = true;
+            win.zIndex = state.nextZIndex;
+            win.data = data ?? win.data;
+            state.nextZIndex++;
         }),
 
         closeWindow: (windowKey) => set((state) => {
             const win = state.windows[windowKey];
-            if(!win) return;
-            if (win) {
-                win.isOpen = false;
-                win.zIndex = INITIAL_Z_INDEX;
-                win.data = null;
-            }
+            if (!win) return;
+            
+            win.isOpen = false;
+            win.zIndex = INITIAL_Z_INDEX;
+            win.data = null;
         }),
 
         focusWindow: (windowKey) => set((state) => {
             const win = state.windows[windowKey];
-            if(!win) return;
-            if (win) {
-                win.zIndex = state.nextZIndex;
-                state.nextZIndex++;
-            }
+            if (!win) return;
+            
+            win.zIndex = state.nextZIndex;
+            state.nextZIndex++;
         }),
     }))
 )
