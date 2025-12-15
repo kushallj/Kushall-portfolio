@@ -69,13 +69,13 @@ const Dock = () => {
             return;
         }
 
+        console.log('Toggling app:', app.id, 'Current state:', window.isOpen);
+
         if (window.isOpen) {
             closeWindow(app.id);
         } else {
             openWindow(app.id);
         }
-
-        console.log('Window state:', window);
     }
 
 
