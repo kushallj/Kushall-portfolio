@@ -3,8 +3,10 @@ import { Tooltip } from 'react-tooltip';
 import React, { useRef } from 'react'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import useWindowStore from '#store/window';
 
 const Dock = () => {
+    const { windows, openWindow, closeWindow, focusWindow } = useWindowStore();
     const dockref = useRef(null);
 
     useGSAP(() => {
@@ -59,7 +61,21 @@ const Dock = () => {
 
     
     const toggleApp = (app) => {
+        if (!app.canOpen) return;
+        
+        const window = windows[app.id];
+        if (!window) {
+            console.warn(`Window config not found for app: ${app.id}`);
+            return;
+        }
 
+        if (window.isOpen) {
+            closeWindow(app.id);
+        } else {
+            openWindow(app.id);
+        }
+
+        console.log('Window state:', window);
     }
 
 
