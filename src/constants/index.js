@@ -75,23 +75,10 @@ const dockApps = [
 ];
 
 const blogPosts = [
+  
+  
   {
     id: 1,
-    date: "Sep 2, 2025",
-    title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
-  },
-  {
-    id: 2,
-    date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
-  },
-  {
-    id: 3,
     date: "Aug 15, 2025",
     title: "The Ultimate Guide to Mastering GSAP Animations",
     image: "/images/blog3.png",
@@ -102,25 +89,76 @@ const blogPosts = [
 const techStack = [
   {
     category: "Frontend",
-    items: ["React.js", "Next.js", "TypeScript"],
+    items: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Flutter",
+      "JavaScript (ES6+)"
+    ],
   },
   {
-    category: "Styling",
-    items: ["Tailwind CSS", "Sass", "CSS"],
+    category: "State & Performance",
+    items: [
+      "Redux / Redux Toolkit",
+      "Context API",
+      "React Hooks",
+      "useMemo / useCallback",
+      "Client-side Caching"
+    ],
+  },
+  {
+    category: "Styling & UI",
+    items: [
+      "Tailwind CSS",
+      "CSS3",
+      "Sass",
+      "Responsive Design",
+      "Figma → Pixel-perfect UI"
+    ],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "Django", "FastAPI"],
+    items: [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "FastAPI",
+      "Node.js",
+      "Express.js"
+    ],
   },
   {
-    category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    category: "Databases",
+    items: [
+      "PostgreSQL",
+      "MongoDB",
+      "Database Schema Design",
+      "Query Optimization"
+    ],
   },
   {
-    category: "Dev Tools",
-    items: ["Git", "GitHub", "Docker"],
+    category: "System Design & Architecture",
+    items: [
+      "REST API Design",
+      "Rule Engines",
+      "Score Engines",
+      "Workflow Automation",
+      "Data-heavy Dashboards"
+    ],
+  },
+  {
+    category: "DevOps & Tooling",
+    items: [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Linux",
+      "CI/CD Basics"
+    ],
   },
 ];
+
 
 const socials = [
   {
@@ -128,28 +166,35 @@ const socials = [
     text: "Github",
     icon: "/icons/github.svg",
     bg: "#f4656b",
-    link: "https://github.com/JavaScript-Mastery-Pro",
+    link: "https://github.com/kushallj",
   },
   {
     id: 2,
-    text: "Platform",
-    icon: "/icons/atom.svg",
-    bg: "#4bcb63",
-    link: "https://jsmastery.com/",
-  },
-  {
-    id: 3,
     text: "Twitter/X",
     icon: "/icons/twitter.svg",
     bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
+    link: "https://x.com/know_jainism",
   },
   {
-    id: 4,
+    id: 3,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#05b6f6",
-    link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+    link: "https://www.linkedin.com/in/kushall-jain-263009261",
+  },
+  {
+    id: 4,
+    text: "LeetCode.com",
+    icon: "/icons/LeetCode.png",
+    bg: "#05b6f6",
+    link: "https://leetcode.com/u/kushalljain",
+  },
+  {
+    id: 5,
+    text: "Chess.com",
+    icon: "/icons/chess.png",
+    bg: "#05b6f6",
+    link: "https://www.chess.com/member/golchha",
   },
 ];
 
@@ -159,44 +204,13 @@ const photosLinks = [
     icon: "/icons/gicon1.svg",
     title: "Library",
   },
-  {
-    id: 2,
-    icon: "/icons/gicon2.svg",
-    title: "Memories",
-  },
-  {
-    id: 3,
-    icon: "/icons/file.svg",
-    title: "Places",
-  },
-  {
-    id: 4,
-    icon: "/icons/gicon4.svg",
-    title: "People",
-  },
-  {
-    id: 5,
-    icon: "/icons/gicon5.svg",
-    title: "Favorites",
-  },
+  
 ];
 
 const gallery = [
   {
     id: 1,
     img: "/images/gal1.png",
-  },
-  {
-    id: 2,
-    img: "/images/gal2.png",
-  },
-  {
-    id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
   },
 ];
 

@@ -129,7 +129,7 @@ const MobileView = () => {
       {isMenuOpen && (
         <div className="bg-white/10 backdrop-blur-md border-b border-white/20 p-4">
           <div className="grid grid-cols-2 gap-2">
-            {sections.map(({ id, label, icon: Icon }) => (
+            {sections.map(({ id, label, icon: IconCmp }) => (
               <button
                 key={id}
                 onClick={() => {
@@ -142,7 +142,7 @@ const MobileView = () => {
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
-                <Icon size={20} />
+                {React.createElement(IconCmp, { size: 20 })}
                 <span className="font-medium">{label}</span>
               </button>
             ))}

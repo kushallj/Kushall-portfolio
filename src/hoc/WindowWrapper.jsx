@@ -13,7 +13,7 @@ const WindowWrapper = (Component, windowKey) => {
 
     const handleClick = useCallback(() => {
       focusWindow(windowKey);
-    }, [focusWindow, windowKey]);
+    }, [focusWindow]);
 
     useGSAP(() => {
       const el = ref.current;
