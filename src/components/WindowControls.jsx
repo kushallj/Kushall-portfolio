@@ -2,25 +2,30 @@ import useWindowStore from '#store/window'
 import { X, Minus, Square } from 'lucide-react'
 import React, { useState } from 'react'
 
-const WindowControls = ({ windowKey }) => {
-  const { closeWindow } = useWindowStore();
+const WindowControls = ({ windowKey, target }) => {
+  const { closeWindow, toggleMinimize } = useWindowStore();
   const [hoveredButton, setHoveredButton] = useState(null);
+
+  // Support both windowKey and target props for backward compatibility
+  const targetWindow = windowKey || target;
 
   const handleClose = (e) => {
     e.stopPropagation(); // Prevent triggering drag
-    closeWindow(windowKey);
+    if (targetWindow) {
+      closeWindow(targetWindow);
+    }
   };
 
   const handleMinimize = (e) => {
     e.stopPropagation();
-    // TODO: Implement minimize functionality
-    console.log('Minimize window:', windowKey);
+    if (targetWindow) {
+      toggleMinimize(targetWindow);
+    }
   };
 
   const handleMaximize = (e) => {
     e.stopPropagation();
     // TODO: Implement maximize functionality
-    console.log('Maximize window:', windowKey);
   };
 
   return (

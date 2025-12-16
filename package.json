@@ -12,12 +12,16 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.17",
+    "@react-pdf-viewer/page-navigation": "^3.12.0",
+    "clsx": "^2.1.1",
     "dayjs": "^1.11.19",
     "gsap": "^3.13.0",
     "immer": "^11.0.1",
     "lucide-react": "^0.555.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
     "react-tooltip": "^5.30.0",
     "tailwindcss": "^4.1.17",
     "zustand": "^5.0.9"

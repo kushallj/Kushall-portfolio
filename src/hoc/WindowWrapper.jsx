@@ -7,7 +7,7 @@ import gsap from 'gsap';
 const WindowWrapper = (Component, windowKey) => {
   const Wrapped = memo((props) => {
     const { focusWindow, windows } = useWindowStore();
-    const { isOpen, zIndex } = windows[windowKey];
+    const { isOpen, isMinimized, zIndex } = windows[windowKey];
     const ref = useRef(null);
 
 
@@ -17,7 +17,7 @@ const WindowWrapper = (Component, windowKey) => {
 
     useGSAP(() => {
       const el = ref.current;
-      if (!el || !isOpen) return;
+      if (!el || !isOpen || isMinimized) return;
 
       // Register the Draggable plugin
       gsap.registerPlugin(Draggable);
@@ -56,25 +56,34 @@ const WindowWrapper = (Component, windowKey) => {
           draggableInstance[0].kill();
         }
       };
-    }, [isOpen, focusWindow, windowKey])
+    }, [isOpen, isMinimized, focusWindow, windowKey])
 
     useLayoutEffect(() => {
       const el = ref.current;
       if (!el) return;
       
-      if (isOpen) {
+      if (isOpen && !isMinimized) {
         el.style.display = "block";
         
         // Set initial position if not already positioned
         if (!el.style.left && !el.style.top) {
           const offset = (zIndex - 1000) * 30; // Cascade windows
-          el.style.left = `${100 + offset}px`;
-          el.style.top = `${100 + offset}px`;
+          const isMobile = window.innerWidth < 640;
+          
+          if (isMobile) {
+            // Center on mobile
+            const rect = el.getBoundingClientRect();
+            el.style.left = `${(window.innerWidth - rect.width) / 2}px`;
+            el.style.top = `${(window.innerHeight - rect.height) / 2}px`;
+          } else {
+            el.style.left = `${100 + offset}px`;
+            el.style.top = `${100 + offset}px`;
+          }
         }
       } else {
         el.style.display = "none";
       }
-    }, [isOpen, zIndex])
+    }, [isOpen, isMinimized, zIndex])
 
     if (!isOpen) return null;
 

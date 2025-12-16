@@ -6,7 +6,7 @@ import React, { memo } from 'react'
 
 const Terminal = memo(() => {
   return (
-    <div className="w-[600px] h-[500px] bg-black/95 backdrop-blur-md rounded-lg shadow-2xl border border-gray-700/50 overflow-hidden">
+    <div className="w-[600px] h-[500px] max-sm:w-[95vw] max-sm:h-[80vh] max-sm:max-w-none bg-black/95 backdrop-blur-md rounded-lg shadow-2xl border border-gray-700/50 overflow-hidden">
       {/* Terminal Header */}
       <div className="window-header flex items-center justify-between px-4 py-3 bg-gray-800/80 border-b border-gray-700/50 cursor-grab active:cursor-grabbing select-none">
         <WindowControls windowKey="terminal" />
@@ -15,7 +15,7 @@ const Terminal = memo(() => {
       </div>
 
       {/* Terminal Content */}
-      <div className="p-4 font-mono text-sm text-green-400 h-full overflow-y-auto">
+      <div className="p-4 max-sm:p-2 font-mono text-sm max-sm:text-xs text-green-400 h-full overflow-y-auto">
         {/* Command Line */}
         <div className="mb-4">
           <span className="text-blue-400">@Kushall</span>

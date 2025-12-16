@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import useWindowStore from '#store/window';
 
 const Dock = () => {
-    const { windows, openWindow, closeWindow, focusWindow } = useWindowStore();
+    const { windows, openWindow, unminimizeWindow, focusWindow } = useWindowStore();
     const dockref = useRef(null);
 
     useGSAP(() => {
@@ -62,20 +62,22 @@ const Dock = () => {
     
     const toggleApp = (app) => {
         if (!app.canOpen) return;
-        
-        const window = windows[app.id];
-        if (!window) {
-            console.warn(`Window config not found for app: ${app.id}`);
+
+        const win = windows[app.id];
+        if (!win) return;
+
+        if (!win.isOpen) {
+            openWindow(app.id);
             return;
         }
 
-        console.log('Toggling app:', app.id, 'Current state:', window.isOpen);
-
-        if (window.isOpen) {
-            closeWindow(app.id);
-        } else {
-            openWindow(app.id);
+        if (win.isMinimized) {
+            unminimizeWindow(app.id);
+            return;
         }
+
+        // If already open and not minimized, just focus/bring to front
+        focusWindow(app.id);
     }
 
 
@@ -85,12 +87,18 @@ const Dock = () => {
             {dockApps.map(({id,
             name,
             icon,
-            canOpen})=>(
-                <div key={id} className='dock-item'>
+            canOpen})=>{
+                const win = windows[id];
+                const isOpen = !!win?.isOpen;
+                const isMin = !!win?.isMinimized;
+
+                return (
+                <div key={id} className='dock-item relative'>
                     <button
                     type='button'
                     className='dock-icon'
                     aria-label={name}
+                    aria-pressed={isOpen}
                     data-tooltip-id='dock-tooltip'
                     data-tooltip-content={name}
                     data-tooltip-delay-show={150}
@@ -103,8 +111,13 @@ const Dock = () => {
                             className={canOpen ? "" : "opacity-60"}
                         />
                     </button>
+                    {canOpen && isOpen && (
+                        <span
+                          className={`pointer-events-none absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full ${isMin ? 'bg-gray-400/80' : 'bg-blue-500/80'}`}
+                        />
+                    )}
                 </div>
-            ))}
+            )})}
         <Tooltip id='dock-tooltip' place='top' className='tooltip'/>    
         </div>
     </section>
