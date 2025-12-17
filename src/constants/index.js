@@ -285,6 +285,80 @@ const WORK_LOCATION = {
         },
       ],
     },
+    {
+  id: 6,
+  name: "DevFrnds - Developer Connection Platform",
+  icon: "/images/folder.png",
+  kind: "folder",
+  position: "top-30 right-80",
+  windowPosition: "top-[53vh] right-7",
+  children: [
+    {
+      id: 1,
+      name: "DevFrnds Project Overview.txt",
+      icon: "/images/txt.png",
+      kind: "file",
+      fileType: "txt",
+      position: "top-5 left-10",
+      description: [
+        "A full-stack developer networking platform inspired by Tinder's matching algorithm, enabling developers to discover collaboration partners, mentors, and team members through skill-based matching and real-time interactions.",
+        
+        "Core Features: Swipe-based developer discovery with tech stack filtering, real-time chat using WebSockets, profile matching algorithm based on skills/interests/experience, connection request workflow with accept/reject logic, and personalized feed recommendations.",
+        
+        "Technical Architecture: Built with MERN stack (MongoDB, Express.js, React.js, Node.js). Frontend uses React 18 with Redux Toolkit for state management, React Router for SPA navigation, and Socket.IO client for real-time features. Backend implements RESTful API design with JWT authentication, bcrypt password hashing, and MongoDB aggregation pipelines for matching algorithms.",
+        
+        "Matching Algorithm: Implemented collaborative filtering algorithm calculating match scores based on: (1) Tech stack overlap (40% weight), (2) Experience level compatibility (25%), (3) Geographic proximity (15%), (4) Shared interests/projects (20%). Uses MongoDB's $geoNear for location-based queries and scoring pipeline achieving <200ms query latency for 10K+ user profiles.",
+        
+        "Real-Time Features: Socket.IO integration enabling instant messaging (typing indicators, read receipts), live connection notifications, and online/offline status tracking. Implemented Redis pub/sub for horizontal scaling across multiple server instances, handling 500+ concurrent WebSocket connections with <50ms message delivery latency.",
+        
+        "Authentication & Security: JWT-based auth with refresh token rotation, rate limiting (express-rate-limit) protecting against brute force attacks, input validation using express-validator, XSS protection via helmet.js, and CORS configuration for secure cross-origin requests. Implemented session management with Redis for distributed systems.",
+        
+        "Database Design: MongoDB schema optimization with compound indexes on frequently queried fields (techStack, location, experienceLevel). Implemented data denormalization for match recommendations reducing query complexity from O(n²) to O(n log n). Used TTL indexes for temporary data (verification tokens, password reset links).",
+        
+        "Performance Optimizations: React.lazy() for code splitting reducing initial bundle by 40%, image optimization with lazy loading, debounced search inputs (300ms), pagination with infinite scroll (20 profiles per load), Redis caching for frequently accessed profiles (60% cache hit rate), and MongoDB query optimization with explain() analysis.",
+        
+        "State Management: Redux Toolkit with createSlice for auth, profiles, connections, and chat modules. Implemented Redux persist for maintaining user session across page refreshes, normalized state shape preventing data duplication, and custom middleware for API call handling with loading/error states.",
+        
+        "Deployment & DevOps: Frontend deployed on Vercel with automatic deployments from main branch, backend on Railway with environment-based configuration, MongoDB Atlas for managed database with automated backups, Redis Cloud for distributed caching, and Cloudinary for profile image CDN with automatic image optimization.",
+        
+        "Testing Strategy: Jest unit tests for utility functions and Redux reducers, React Testing Library for component testing, Supertest for API endpoint testing, and Postman collections for manual API validation. Achieved 70% code coverage on critical business logic.",
+        
+        "Interview Talking Points: Discuss scaling WebSocket connections horizontally, optimizing MongoDB aggregation pipelines for complex matching algorithms, handling race conditions in connection requests (optimistic locking), implementing efficient search with debouncing and caching, designing for eventual consistency in distributed systems, and trade-offs between normalized vs denormalized data models.",
+        
+        "Technical Challenges Solved: (1) Preventing duplicate connection requests using MongoDB unique compound indexes on [user1_id, user2_id], (2) Real-time notification delivery across distributed servers using Redis pub/sub, (3) Efficient skill-based search with autocomplete using MongoDB text indexes and $regex optimization, (4) Image upload with size validation and automatic compression (multer + sharp), (5) Preventing N+1 queries through proper MongoDB population and lean() optimization.",
+        
+        "Business Impact: Platform enables developers to find collaboration partners 10x faster than traditional networking. Match algorithm achieves 85% user satisfaction rate based on successful connections. Real-time features increase user engagement by 60% compared to async-only messaging."
+      ],
+    },
+    {
+      id: 2,
+      name: "devfrnds.online",
+      icon: "/images/safari.png",
+      kind: "file",
+      fileType: "url",
+      href: "https://devfrnds.online",
+      position: "top-10 right-20",
+    },
+    {
+      id: 3,
+      name: "GitHub Repository",
+      icon: "/images/github.png",
+      kind: "file",
+      fileType: "url",
+      href: "https://github.com/kushallj/devTinder",
+      position: "top-20 left-40",
+    },
+    {
+      id: 4,
+      name: "Technical Documentation.pdf",
+      icon: "/images/pdf.png",
+      kind: "file",
+      fileType: "pdf",
+      href: "https://github.com/kushallj/devTinder/blob/main/README.md",
+      position: "top-40 left-60",
+    }
+  ],
+}
   ],
 };
 

@@ -71,12 +71,25 @@ const Welcome = () => {
     },[])
   return (
     <section id='welcome'>
-        <p ref={subtitleRef}>{renderText("Hey, I'm Kushall! Welcome to my",
-        "text-3xl font-georama",
-        100)}</p>
-        <h1 ref={titleRef} className='mt-7'>{renderText("portfolio",
-        "text-9xl italic font-georama",
-        )}</h1>
+        <p ref={subtitleRef}>
+  {renderText(
+    "Hey, I'm Kushall! Welcome to my",
+    "text-3xl font-georama tracking-[0.3em]  \
+     bg-gradient-to-r from-zinc-300 via-pink to-zinc-300 \
+     bg-clip-text text-transparent \
+     drop-shadow-[0_3px_3px_rgba(0,0,0,0.9)] \
+     drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]",
+    100
+  )}
+</p>
+
+<h1 ref={titleRef} className="mt-7">
+  {renderText(
+    "portfolio",
+    "text-9xl italic font-georama text-cyan-300 drop-shadow-[0_0_25px_rgba(125,249,255,0.6)]",
+  )}
+</h1>
+
     </section>
   )
 }
