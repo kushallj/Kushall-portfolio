@@ -92,6 +92,9 @@ const WindowWrapper = (Component, windowKey) => {
       };
     }, [isOpen, isMinimized, windowKey]);
 
+    const zIndexRef = useRef(zIndex);
+    zIndexRef.current = zIndex;
+
     useEffect(() => {
       const el = ref.current;
       if (!el) return;
@@ -99,7 +102,8 @@ const WindowWrapper = (Component, windowKey) => {
       if (isOpen && !isMinimized) {
         // Set initial position if not already set
         if (!el.style.left && !el.style.top) {
-          const offset = ((zIndex - 1000) % 8) * 30;
+          const currentZ = zIndexRef.current;
+          const offset = ((currentZ - 1000) % 8) * 30;
           const isMobile = window.innerWidth < 640;
           if (isMobile) {
             const rect = el.getBoundingClientRect();
