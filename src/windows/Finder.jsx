@@ -80,11 +80,11 @@ const Finder = memo(() => {
     ));
 
   return (
-    <div className="w-[900px] h-[600px] max-sm:w-[95vw] max-sm:h-[85vh] bg-white rounded-lg shadow-2xl border border-gray-300 overflow-hidden flex flex-col">
+    <div className="w-[900px] h-[600px] max-sm:w-[95vw] max-sm:h-[85vh] bg-white/95 backdrop-blur-xl rounded-2xl overflow-hidden flex flex-col">
       {/* Finder Header */}
-      <div className="window-header flex items-center justify-between px-4 py-3 bg-gray-100 border-b border-gray-300 cursor-grab active:cursor-grabbing select-none shrink-0">
+      <div className="window-header liquid-glass-header flex items-center justify-between px-4 py-3 cursor-grab active:cursor-grabbing select-none shrink-0">
         <WindowControls target="finder" />
-        <h2 className="text-gray-700 text-sm font-medium">Finder — {activeLocation.name}</h2>
+        <h2 className="text-gray-700 text-sm font-semibold tracking-tight">Finder — {activeLocation.name}</h2>
         <div className="flex items-center gap-2">
           <Search className="w-4 h-4 text-gray-500" />
         </div>

@@ -8,9 +8,9 @@ const Contact = memo(() => {
   return (
     <>
       {/* Header */}
-      <div className="window-header flex items-center justify-between px-4 py-3 bg-gray-100 border-b border-gray-300 cursor-grab active:cursor-grabbing select-none shrink-0">
+      <div className="window-header liquid-glass-header flex items-center justify-between px-4 py-3 cursor-grab active:cursor-grabbing select-none shrink-0">
         <WindowControls target="contact" />
-        <h2 className="text-gray-700 text-sm font-medium">Contact</h2>
+        <h2 className="text-gray-700 text-sm font-semibold tracking-tight">Contact — Get in Touch</h2>
         <div className="w-16" />
       </div>
 

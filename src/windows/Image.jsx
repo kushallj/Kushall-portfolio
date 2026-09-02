@@ -17,12 +17,12 @@ const ImageViewer = memo(() => {
   return (
     <>
       {/* Header */}
-      <div className="window-header relative flex items-center justify-between px-4 py-3 bg-gray-100 border-b border-gray-300 cursor-grab active:cursor-grabbing select-none shrink-0">
+      <div className="window-header liquid-glass-header relative flex items-center justify-between px-4 py-3 cursor-grab active:cursor-grabbing select-none shrink-0">
         <div className="w-16 flex items-center">
           <WindowControls target="imgfile" />
         </div>
         <h2
-          className="absolute left-1/2 -translate-x-1/2 text-gray-700 text-sm font-medium text-center mx-auto max-w-[60%] truncate"
+          className="absolute left-1/2 -translate-x-1/2 text-gray-700 text-sm font-semibold tracking-tight text-center mx-auto max-w-[60%] truncate"
           title={title}
         >
           {title}

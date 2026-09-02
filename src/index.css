@@ -45,7 +45,7 @@ body {
   }
 
   nav {
-    @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl p-2 px-5 select-none;
+    @apply flex justify-between items-center bg-white/35 backdrop-blur-2xl p-2 px-6 select-none border-b border-white/40 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.12),inset_0_1px_1px_rgba(255,255,255,0.7)];
 
     div {
       @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
@@ -56,15 +56,15 @@ body {
     }
 
     ul {
-      @apply flex items-center gap-5 max-sm:hidden;
+      @apply flex items-center gap-2 max-sm:hidden;
 
-      p {
-        @apply text-sm cursor-pointer hover:underline transition-all;
+      li {
+        @apply text-sm text-gray-800 font-medium px-2.5 py-1 rounded-md cursor-pointer transition-all duration-200 hover:bg-white/40 hover:text-black hover:shadow-xs active:scale-95;
       }
     }
 
     time {
-      @apply text-sm font-medium text-black;
+      @apply text-xs font-semibold text-gray-800 bg-white/30 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/30;
     }
   }
 }
@@ -105,18 +105,54 @@ body {
     @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
 
     .dock-container {
-      @apply bg-white/20 backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      gap: 0.375rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(36px) saturate(220%) contrast(105%);
+      -webkit-backdrop-filter: blur(36px) saturate(220%) contrast(105%);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 
+        0 25px 60px -15px rgba(0, 0, 0, 0.45),
+        0 12px 24px -10px rgba(0, 0, 0, 0.25),
+        inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.85),
+        inset 0 -1.5px 1.5px 0 rgba(0, 0, 0, 0.15),
+        0 0 30px 0 rgba(255, 255, 255, 0.15);
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .dock-container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: radial-gradient(
+        circle 140px at var(--dock-mouse-x, 50%) var(--dock-mouse-y, 50%),
+        rgba(255, 255, 255, 0.45) 0%,
+        rgba(255, 255, 255, 0.12) 40%,
+        transparent 70%
+      );
+      opacity: var(--dock-sheen-opacity, 0);
+      transition: opacity 0.3s ease;
+      mix-blend-mode: overlay;
     }
 
     .tooltip {
-      @apply !py-1 !px-3 !w-fit !text-center !text-xs !rounded-md !bg-blue-200 !text-blue-900 !shadow-2xl;
+      @apply !py-1 !px-3 !w-fit !text-center !text-xs !rounded-lg !bg-white/80 !text-gray-900 !backdrop-blur-md !border !border-white/50 !shadow-2xl !font-medium;
     }
 
     .dock-icon {
-      @apply size-14 3xl:size-20 cursor-pointer;
+      @apply size-14 3xl:size-20 cursor-pointer relative flex items-center justify-center;
+      transform-origin: bottom center;
+      will-change: transform;
 
       img {
-        @apply object-cover object-center;
+        @apply object-cover object-center w-full h-full drop-shadow-[0_8px_12px_rgba(0,0,0,0.25)];
+        transition: filter 0.2s ease;
       }
     }
   }
@@ -407,13 +443,99 @@ body {
         @apply absolute z-0 select-none flex items-center flex-col;
 
         img {
-          @apply group-hover:bg-gray-950/10 p-1 rounded-md;
+          @apply p-1.5 rounded-xl transition-all duration-200 drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)];
         }
 
         p {
-          @apply text-sm text-white text-center px-1 rounded-md group-hover:bg-blue-500 transition-colors max-w-40;
+          @apply text-xs font-medium text-white text-center px-2 py-0.5 mt-1 rounded-md bg-black/25 backdrop-blur-md border border-white/20 shadow-sm transition-all duration-200 max-w-44 group-hover:bg-blue-600/90 group-hover:border-blue-400/60;
         }
       }
+    }
+  }
+
+  /* ====================================================
+     Apple Liquid Glass & visionOS Depth Design Language
+     ==================================================== */
+  .liquid-glass-shell {
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(36px) saturate(210%) contrast(104%);
+    -webkit-backdrop-filter: blur(36px) saturate(210%) contrast(104%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 
+      0 30px 70px -15px rgba(0, 0, 0, 0.45),
+      0 12px 28px -8px rgba(0, 0, 0, 0.25),
+      inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.95),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+      0 0 25px 0 rgba(255, 255, 255, 0.1);
+    transform-style: preserve-3d;
+    transition: box-shadow 0.3s cubic-bezier(0.2, 0, 0, 1), border-color 0.3s ease;
+    will-change: transform, box-shadow;
+  }
+
+  .liquid-glass-header {
+    background: rgba(245, 247, 250, 0.7);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-glass-header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      circle 200px at var(--header-glint-x, 50%) var(--header-glint-y, 50%),
+      rgba(255, 255, 255, 0.45) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      transparent 80%
+    );
+    opacity: var(--header-glint-opacity, 0);
+    transition: opacity 0.25s ease;
+    mix-blend-mode: overlay;
+  }
+
+  .liquid-folder-card {
+    position: relative;
+    border-radius: 0.875rem;
+    padding: 0.5rem;
+    transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+
+  .liquid-bead {
+    width: 5px;
+    height: 5px;
+    border-radius: 9999px;
+    background: radial-gradient(circle, #60a5fa 0%, #2563eb 100%);
+    box-shadow: 
+      0 0 8px 1.5px rgba(96, 165, 250, 0.9),
+      0 0 2px 0.5px rgba(255, 255, 255, 0.95);
+    animation: liquid-pulse 2.4s infinite ease-in-out;
+  }
+
+  .liquid-bead-minimized {
+    background: radial-gradient(circle, #9ca3af 0%, #6b7280 100%);
+    box-shadow: 0 0 6px 1px rgba(156, 163, 175, 0.6);
+  }
+
+  @keyframes liquid-pulse {
+    0%, 100% {
+      transform: translateX(-50%) scale(1);
+      opacity: 0.85;
+    }
+    50% {
+      transform: translateX(-50%) scale(1.3);
+      opacity: 1;
+      box-shadow: 
+        0 0 12px 3.5px rgba(96, 165, 250, 1),
+        0 0 4px 1px rgba(255, 255, 255, 1);
     }
   }
 }

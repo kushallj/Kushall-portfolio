@@ -40,3 +40,101 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Mobile Optimization Styles */
+@media (max-width: 639px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Improve mobile scrolling performance */
+  #root {
+    padding: 0;
+  }
+
+  /* Smooth section transitions on mobile */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Touch feedback animations */
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:active {
+    opacity: 0.8;
+  }
+
+  /* Better spacing on mobile */
+  input,
+  textarea,
+  select {
+    min-height: 44px;
+    min-width: 44px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Smooth scrolling for scrollable containers */
+  .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Safe area support for notched devices */
+  @supports (padding: max(0px)) {
+    main {
+      padding-bottom: max(env(safe-area-inset-bottom), 1rem);
+    }
+  }
+}
+
+/* Animation utilities */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: slideInFromTop 0.2s ease-out;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Improve image rendering on mobile */
+img {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Optimize form inputs for mobile */
+@media (max-width: 639px) {
+  textarea {
+    resize: vertical;
+  }
+}

@@ -5,11 +5,11 @@ import React, { memo } from 'react'
 
 const Safari = memo(() => {
   return (
-    <div className="w-[800px] h-[600px] max-sm:w-[95vw] max-sm:h-[85vh] max-sm:max-w-none bg-white rounded-lg shadow-2xl border border-gray-300 overflow-hidden">
+    <div className="w-[800px] h-[600px] max-sm:w-[95vw] max-sm:h-[85vh] max-sm:max-w-none bg-white/95 backdrop-blur-xl rounded-2xl overflow-hidden">
       {/* Safari Header */}
-      <div className="window-header flex items-center justify-between px-4 py-3 bg-gray-100 border-b border-gray-300 cursor-grab active:cursor-grabbing select-none">
+      <div className="window-header liquid-glass-header flex items-center justify-between px-4 py-3 cursor-grab active:cursor-grabbing select-none">
         <WindowControls windowKey="safari" />
-        <h2 className="text-gray-700 text-sm font-medium">Safari — Articles</h2>
+        <h2 className="text-gray-700 text-sm font-semibold tracking-tight">Safari — Articles</h2>
         <div className="w-16"></div>
       </div>
 

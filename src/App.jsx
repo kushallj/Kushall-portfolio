@@ -1,13 +1,12 @@
-import { Navbar,Welcome,Dock } from '#components'
+import { Navbar, Welcome, Dock } from '#components'
 import MobileView from '#components/MobileView'
 import MobileDock from '#components/MobileDock'
 import { Terminal, Safari, Resume, Finder, Text, Image, Contact, Portfolio } from '#windows';
-import gsap from "gsap";
-import { Draggable } from 'gsap/Draggable'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 import Home from '#components/Home';
 
-gsap.registerPlugin(Draggable);
+// Lazy load GSAP only on desktop
+let Draggable;
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -20,28 +19,39 @@ const App = () => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     
+    // Load GSAP only on desktop
+    if (!isMobile) {
+      import('gsap').then((gsapModule) => {
+        import('gsap/Draggable').then((draggableModule) => {
+          const gsap = gsapModule.default;
+          Draggable = draggableModule.default;
+          gsap.registerPlugin(Draggable);
+        });
+      });
+    }
+    
     return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  }, [isMobile]);
 
   return (
-    <main>
-      <Navbar/>
-      {!isMobile && <Welcome/>}
-      <Dock/>
-      <MobileDock/>
+    <main className="min-h-screen">
+      {!isMobile && <Navbar />}
+      {!isMobile && <Welcome />}
+      <Dock />
+      <MobileDock />
 
-      <Terminal/>
-      <Safari/>
-      <Resume/>
-      <Finder/>
-      <Text/>
-      <Image/>
-      <Contact/>
-      <Portfolio/>
-      <Home/>
+      <Terminal />
+      <Safari />
+      <Resume />
+      <Finder />
+      <Text />
+      <Image />
+      <Contact />
+      <Portfolio />
+      <Home />
       {isMobile && <MobileView />}
     </main>
   )
 }
 
-export default App
+export default memo(App);

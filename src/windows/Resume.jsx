@@ -38,11 +38,11 @@ const Resume = memo(() => {
   // Pagination controls removed; default layout provides built-in toolbar
 
   return (
-    <div className="w-[700px] h-[800px] max-sm:w-[95vw] max-sm:h-[90vh] bg-white rounded-lg shadow-2xl border border-gray-300 overflow-hidden flex flex-col">
+    <div className="w-[700px] h-[800px] max-sm:w-[95vw] max-sm:h-[90vh] bg-white/95 backdrop-blur-xl rounded-2xl overflow-hidden flex flex-col">
       {/* Resume Header */}
-      <div className="window-header flex items-center justify-between px-4 py-3 bg-gray-100 border-b border-gray-300 cursor-grab active:cursor-grabbing select-none shrink-0">
+      <div className="window-header liquid-glass-header flex items-center justify-between px-4 py-3 cursor-grab active:cursor-grabbing select-none shrink-0">
         <WindowControls target="resume" />
-        <h2 className="text-gray-700 text-sm font-medium">Resume — Kushall</h2>
+        <h2 className="text-gray-700 text-sm font-semibold tracking-tight">Resume — Kushall</h2>
         <div className="w-16"></div>
       </div>
 
@@ -155,8 +155,8 @@ const Resume = memo(() => {
           <div className="bg-white p-8 rounded-lg shadow-lg max-w-md text-center">
             <FileText className="w-24 h-24 text-blue-500 mx-auto mb-6" />
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Kushall's Resume</h3>
-            <p className="text-gray-600 mb-2">Full Stack Developer</p>
-            <p className="text-sm text-gray-500 mb-6">Last updated: December 2025</p>
+            <p className="text-gray-600 mb-2">Full Stack & Mobile Engineer</p>
+            <p className="text-sm text-gray-500 mb-6">Last updated: 2026</p>
             
             {pdfError && (
               <div className="mb-4 p-3 bg-yellow-100 border border-yellow-300 rounded-lg">
@@ -170,19 +170,19 @@ const Resume = memo(() => {
             <div className="text-left space-y-3 mb-6">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span className="text-sm text-gray-700">3+ years experience</span>
+                <span className="text-sm text-gray-700">4+ years experience (Full Stack, Mobile & IoT)</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-sm text-gray-700">React, Node.js, TypeScript</span>
+                <span className="text-sm text-gray-700">Flutter, Python (Django/FastAPI), React, TypeScript</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                <span className="text-sm text-gray-700">10+ projects completed</span>
+                <span className="text-sm text-gray-700">GameChange Energy & Progfin FinTech (150+ Cr vol)</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                <span className="text-sm text-gray-700">Computer Science degree</span>
+                <span className="text-sm text-gray-700">300+ LeetCode (DSA) & System Design</span>
               </div>
             </div>
 
@@ -206,9 +206,10 @@ const Resume = memo(() => {
             </div>
 
             {/* Contact Info */}
-            <div className="mt-6 pt-4 border-t border-gray-200 text-sm text-gray-500">
+            <div className="mt-6 pt-4 border-t border-gray-200 text-sm text-gray-500 space-y-1">
               <p>📧 kushall.jain07@gmail.com</p>
-              <p>🌐 github.com/kushallj</p>
+              <p>🌐 linkedin.com/in/kushall-jain-263009261</p>
+              <p>🐙 github.com/kushallj</p>
             </div>
           </div>
         )}

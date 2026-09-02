@@ -6,11 +6,11 @@ import React, { memo } from 'react'
 
 const Terminal = memo(() => {
   return (
-    <div className="w-[600px] h-[500px] max-sm:w-[95vw] max-sm:h-[80vh] max-sm:max-w-none bg-black/95 backdrop-blur-md rounded-lg shadow-2xl border border-gray-700/50 overflow-hidden">
+    <div className="w-[600px] h-[500px] max-sm:w-[95vw] max-sm:h-[80vh] max-sm:max-w-none bg-black/90 backdrop-blur-2xl rounded-2xl border border-white/20 overflow-hidden shadow-2xl">
       {/* Terminal Header */}
-      <div className="window-header flex items-center justify-between px-4 py-3 bg-gray-800/80 border-b border-gray-700/50 cursor-grab active:cursor-grabbing select-none">
+      <div className="window-header flex items-center justify-between px-4 py-3 bg-white/10 border-b border-white/10 cursor-grab active:cursor-grabbing select-none backdrop-blur-md">
         <WindowControls windowKey="terminal" />
-        <h2 className="text-gray-300 text-sm font-medium">Terminal — Tech Stack</h2>
+        <h2 className="text-gray-200 text-sm font-semibold tracking-tight">Terminal — Tech Stack</h2>
         <div className="w-16"></div>
       </div>
 

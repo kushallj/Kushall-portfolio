@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.VITE_BASE_PATH || (process.env.GITHUB_ACTIONS && !process.env.CUSTOM_DOMAIN ? '/Kushall-portfolio/' : '/'),
   plugins: [react(),
     tailwindcss(),
   ],

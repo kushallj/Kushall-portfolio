@@ -16,9 +16,9 @@ const Text = memo(() => {
   return (
     <>
       {/* Text File Header */}
-      <div className="window-header flex items-center justify-between px-4 py-3 bg-gray-100 border-b border-gray-300 cursor-grab active:cursor-grabbing select-none shrink-0">
+      <div className="window-header liquid-glass-header flex items-center justify-between px-4 py-3 cursor-grab active:cursor-grabbing select-none shrink-0">
         <WindowControls target="txtfile" />
-        <h2 className="text-gray-700 text-sm font-medium">
+        <h2 className="text-gray-700 text-sm font-semibold tracking-tight">
           {name || 'Text File'}
         </h2>
         <div className="w-16"></div>
