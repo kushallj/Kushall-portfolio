@@ -4,6 +4,7 @@ import MobileDock from '#components/MobileDock'
 import { Terminal, Safari, Resume, Finder, Text, Image, Contact, Portfolio } from '#windows';
 import React, { useState, useEffect, memo } from 'react'
 import Home from '#components/Home';
+import { asset } from '#utils/asset';
 
 // Lazy load GSAP only on desktop
 let Draggable;
@@ -12,6 +13,12 @@ const App = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Set wallpaper background dynamically with base-url compatibility
+    document.body.style.backgroundImage = `url("${asset('images/side-view-man-working-nature.jpg')}")`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundRepeat = 'no-repeat';
+
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 640); // sm breakpoint
     };

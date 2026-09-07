@@ -7,6 +7,7 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import { pageNavigationPlugin } from '@react-pdf-viewer/page-navigation';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import { asset } from '#utils/asset';
 
 // Using @react-pdf-viewer with hosted worker for compatibility with React 19
 const Resume = memo(() => {
@@ -24,7 +25,7 @@ const Resume = memo(() => {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/files/resume.pdf';
+    link.href = asset('files/resume.pdf');
     link.download = 'Kushall_Resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -32,7 +33,7 @@ const Resume = memo(() => {
   };
 
   const openInNewTab = () => {
-    window.open('/files/resume.pdf', '_blank');
+    window.open(asset('files/resume.pdf'), '_blank');
   };
 
   // Pagination controls removed; default layout provides built-in toolbar
@@ -132,7 +133,7 @@ const Resume = memo(() => {
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
               <div className="w-[650px] max-sm:w-full h-[720px] max-sm:h-[70vh]">
                 <Viewer 
-                  fileUrl="/files/resume.pdf" 
+                  fileUrl={asset('files/resume.pdf')} 
                   plugins={[defaultLayoutPluginInstance, pageNavigationPluginInstance]}
                   onDocumentLoadFail={onDocumentLoadFail}
                 />
@@ -144,7 +145,7 @@ const Resume = memo(() => {
         {viewMode === 'iframe' && (
           <div className="w-full h-full bg-white rounded shadow-lg">
             <iframe
-              src="/files/resume.pdf"
+              src={asset('files/resume.pdf')}
               className="w-full h-full border-0 rounded"
               title="Resume PDF"
             />

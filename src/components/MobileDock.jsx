@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { dockApps } from '#constants';
 import useWindowStore from '#store/window';
+import { asset } from '#utils/asset';
 
 const MobileDock = memo(() => {
   const { windows, openWindow, closeWindow, unminimizeWindow, focusWindow } = useWindowStore();
@@ -60,7 +61,7 @@ const MobileDock = memo(() => {
             title={name}
           >
             <img
-              src={`/images/${icon}`}
+              src={asset(`images/${icon}`)}
               alt={name}
               className="w-full h-full object-cover"
               loading="lazy"

@@ -1,3 +1,5 @@
+import { asset } from '#utils/asset';
+
 const navLinks = [
   {
     id: 1,
@@ -19,19 +21,19 @@ const navLinks = [
 const navIcons = [
   {
     id: 1,
-    img: "/icons/wifi.svg",
+    img: asset("/icons/wifi.svg"),
   },
   {
     id: 2,
-    img: "/icons/search.svg",
+    img: asset("/icons/search.svg"),
   },
   {
     id: 3,
-    img: "/icons/user.svg",
+    img: asset("/icons/user.svg"),
   },
   {
     id: 4,
-    img: "/icons/mode.svg",
+    img: asset("/icons/mode.svg"),
   },
 ];
 
@@ -81,7 +83,7 @@ const blogPosts = [
     id: 1,
     date: "Aug 15, 2025",
     title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
+    image: asset("/images/blog3.png"),
     link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
   },
 ];
@@ -164,35 +166,35 @@ const socials = [
   {
     id: 1,
     text: "Github",
-    icon: "/icons/github.svg",
+    icon: asset("/icons/github.svg"),
     bg: "#f4656b",
     link: "https://github.com/kushallj",
   },
   {
     id: 2,
     text: "Twitter/X",
-    icon: "/icons/twitter.svg",
+    icon: asset("/icons/twitter.svg"),
     bg: "#ff866b",
     link: "https://x.com/know_jainism",
   },
   {
     id: 3,
     text: "LinkedIn",
-    icon: "/icons/linkedin.svg",
+    icon: asset("/icons/linkedin.svg"),
     bg: "#05b6f6",
     link: "https://www.linkedin.com/in/kushall-jain-263009261",
   },
   {
     id: 4,
     text: "LeetCode.com",
-    icon: "/icons/LeetCode.png",
+    icon: asset("/icons/LeetCode.png"),
     bg: "#05b6f6",
     link: "https://leetcode.com/u/kushalljain",
   },
   {
     id: 5,
     text: "Chess.com",
-    icon: "/icons/chess.png",
+    icon: asset("/icons/chess.png"),
     bg: "#05b6f6",
     link: "https://www.chess.com/member/golchha",
   },
@@ -201,7 +203,7 @@ const socials = [
 const photosLinks = [
   {
     id: 1,
-    icon: "/icons/gicon1.svg",
+    icon: asset("/icons/gicon1.svg"),
     title: "Library",
   },
   
@@ -210,7 +212,7 @@ const photosLinks = [
 const gallery = [
   {
     id: 1,
-    img: "/images/gal1.png",
+    img: asset("/images/gal1.png"),
   },
 ];
 
@@ -229,14 +231,14 @@ const WORK_LOCATION = {
   id: 1,
   type: "work",
   name: "Work",
-  icon: "/icons/work.svg",
+  icon: asset("/icons/work.svg"),
   kind: "folder",
   children: [
     // ▶ Experience 1: GameChange Energy
     {
       id: 7,
       name: "GameChange Energy - Solar IoT",
-      icon: "/images/folder.png",
+      icon: asset("/images/folder.png"),
       kind: "folder",
       position: "top-10 left-10",
       windowPosition: "top-[15vh] left-7",
@@ -244,12 +246,12 @@ const WORK_LOCATION = {
         {
           id: 1,
           name: "GameChange Energy Experience.txt",
-          icon: "/images/txt.png",
+          icon: asset("/images/txt.png"),
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
           subtitle: "Software Engineer, Full Stack & IoT Systems (Apr 2026 – Aug 2026)",
-          image: "/images/Kushall.jpg",
+          image: asset("/images/Kushall.jpg"),
           description: [
             "Company: GameChange Energy | Role: Software Engineer, Full Stack & IoT Systems | Duration: Apr 2026 – Aug 2026 (Remote)",
             "Platform Overview: Architected and delivered full-stack features for a distributed solar-site visualization and hardware device-command platform, enabling real-time remote telemetry and control across geographically dispersed solar assets.",
@@ -263,7 +265,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "LinkedIn Profile",
-          icon: "/icons/linkedin.svg",
+          icon: asset("/icons/linkedin.svg"),
           kind: "file",
           fileType: "url",
           href: "https://www.linkedin.com/in/kushall-jain-263009261/",
@@ -272,10 +274,10 @@ const WORK_LOCATION = {
         {
           id: 3,
           name: "solar-iot-preview.png",
-          icon: "/images/image.png",
+          icon: asset("/images/image.png"),
           kind: "file",
           fileType: "img",
-          imageUrl: "/images/project-2.png",
+          imageUrl: asset("/images/project-2.png"),
           position: "top-52 right-80",
         },
       ],
@@ -284,7 +286,7 @@ const WORK_LOCATION = {
     {
       id: 8,
       name: "Progfin - FinTech & Mobile",
-      icon: "/images/folder.png",
+      icon: asset("/images/folder.png"),
       kind: "folder",
       position: "top-10 left-60",
       windowPosition: "top-[35vh] left-7",
@@ -292,12 +294,12 @@ const WORK_LOCATION = {
         {
           id: 1,
           name: "Progfin FinTech Experience.txt",
-          icon: "/images/txt.png",
+          icon: asset("/images/txt.png"),
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
           subtitle: "Full Stack Software Developer (Dec 2023 – Mar 2026)",
-          image: "/images/Kushall.jpg",
+          image: asset("/images/Kushall.jpg"),
           description: [
             "Company: Progfin Pvt Ltd (FinTech) | Role: Full Stack Software Developer | Duration: Dec 2023 – Mar 2026 (Delhi, India)",
             "Enterprise Financial Platform: Architected and delivered a financial platform in a regulated fintech environment, serving 1,000+ SMEs and 10,000+ daily active users, processing 150+ Cr in monthly transactions at 99.5% uptime using React (TypeScript), Django/FastAPI, PostgreSQL, and AWS.",
@@ -311,10 +313,10 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "financial-platform.png",
-          icon: "/images/image.png",
+          icon: asset("/images/image.png"),
           kind: "file",
           fileType: "img",
-          imageUrl: "/images/project-1.png",
+          imageUrl: asset("/images/project-1.png"),
           position: "top-52 right-80",
         },
       ],
@@ -323,7 +325,7 @@ const WORK_LOCATION = {
     {
       id: 6,
       name: "DevFrnds - Developer Platform",
-      icon: "/images/folder.png",
+      icon: asset("/images/folder.png"),
       kind: "folder",
       position: "top-40 left-10",
       windowPosition: "top-[55vh] left-7",
@@ -331,12 +333,12 @@ const WORK_LOCATION = {
         {
           id: 1,
           name: "DevFrnds Project Overview.txt",
-          icon: "/images/txt.png",
+          icon: asset("/images/txt.png"),
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
           subtitle: "Full-Stack Developer Networking Platform (React, Node.js, MongoDB, Socket.IO)",
-          image: "/images/project-2.png",
+          image: asset("/images/project-2.png"),
           description: [
             "A full-stack developer networking platform inspired by Tinder's matching algorithm, enabling developers to discover collaboration partners, mentors, and team members through skill-based matching and real-time interactions.",
             
@@ -370,7 +372,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "devfrnds.online",
-          icon: "/images/safari.png",
+          icon: asset("/images/safari.png"),
           kind: "file",
           fileType: "url",
           href: "https://devfrnds.online",
@@ -379,7 +381,7 @@ const WORK_LOCATION = {
         {
           id: 3,
           name: "GitHub Repository",
-          icon: "/images/github.png",
+          icon: asset("/images/github.png"),
           kind: "file",
           fileType: "url",
           href: "https://github.com/kushallj/devTinder",
@@ -388,7 +390,7 @@ const WORK_LOCATION = {
         {
           id: 4,
           name: "Technical Documentation.pdf",
-          icon: "/images/pdf.png",
+          icon: asset("/images/pdf.png"),
           kind: "file",
           fileType: "pdf",
           href: "https://github.com/kushallj/devTinder/blob/main/README.md",
@@ -400,7 +402,7 @@ const WORK_LOCATION = {
     {
       id: 5,
       name: "Food Delivery App",
-      icon: "/images/folder.png",
+      icon: asset("/images/folder.png"),
       kind: "folder",
       position: "top-40 left-60",
       windowPosition: "top-[75vh] left-7",
@@ -408,7 +410,7 @@ const WORK_LOCATION = {
         {
           id: 1,
           name: "Food Delivery App Project.txt",
-          icon: "/images/txt.png",
+          icon: asset("/images/txt.png"),
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
@@ -424,7 +426,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "food-delivery-app.com",
-          icon: "/images/safari.png",
+          icon: asset("/images/safari.png"),
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/LKrX390fJMw?si=cExkuVhf2DTV9G2-",
@@ -433,11 +435,11 @@ const WORK_LOCATION = {
         {
           id: 4,
           name: "food-delivery-app.png",
-          icon: "/images/image.png",
+          icon: asset("/images/image.png"),
           kind: "file",
           fileType: "img",
           position: "top-52 right-80",
-          imageUrl: "/images/project-3.png",
+          imageUrl: asset("/images/project-3.png"),
         },
       ],
     },
@@ -448,45 +450,45 @@ const ABOUT_LOCATION = {
   id: 2,
   type: "about",
   name: "About me",
-  icon: "/icons/info.svg",
+  icon: asset("/icons/info.svg"),
   kind: "folder",
   children: [
     {
       id: 1,
       name: "me.png",
-      icon: "/images/image.png",
+      icon: asset("/images/image.png"),
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/Kushall.jpg",
+      imageUrl: asset("/images/Kushall.jpg"),
     },
     {
       id: 2,
       name: "casual-me.png",
-      icon: "/images/image.png",
+      icon: asset("/images/image.png"),
       kind: "file",
       fileType: "img",
       position: "top-28 right-72",
-      imageUrl: "/images/Kushall.jpg",
+      imageUrl: asset("/images/Kushall.jpg"),
     },
     {
       id: 3,
       name: "conference-me.png",
-      icon: "/images/image.png",
+      icon: asset("/images/image.png"),
       kind: "file",
       fileType: "img",
       position: "top-52 left-80",
-      imageUrl: "/images/Kushall.jpg",
+      imageUrl: asset("/images/Kushall.jpg"),
     },
     {
       id: 4,
       name: "about-me.txt",
-      icon: "/images/txt.png",
+      icon: asset("/images/txt.png"),
       kind: "file",
       fileType: "txt",
       position: "top-60 left-5",
       subtitle: "Full-Stack & Mobile Engineer | IoT & Regulated FinTech Systems",
-      image: "/images/Kushall.jpg",
+      image: asset("/images/Kushall.jpg"),
       description: [
         "Hey, I’m Kushall Jain 👋 — a Full-Stack & Mobile Software Engineer with 4+ years of hands-on experience building production-grade IoT systems, mobile applications (Flutter), and high-scale financial platforms.",
 
@@ -506,13 +508,13 @@ const RESUME_LOCATION = {
   id: 3,
   type: "resume",
   name: "Resume",
-  icon: "/icons/file.svg",
+  icon: asset("/icons/file.svg"),
   kind: "folder",
   children: [
     {
       id: 1,
       name: "Resume.pdf",
-      icon: "/images/pdf.png",
+      icon: asset("/images/pdf.png"),
       kind: "file",
       fileType: "pdf",
       // you can add `href` if you want to open a hosted resume
@@ -525,26 +527,26 @@ const TRASH_LOCATION = {
   id: 4,
   type: "trash",
   name: "Trash",
-  icon: "/icons/trash.svg",
+  icon: asset("/icons/trash.svg"),
   kind: "folder",
   children: [
     {
       id: 1,
       name: "trash1.png",
-      icon: "/images/image.png",
+      icon: asset("/images/image.png"),
       kind: "file",
       fileType: "img",
       position: "top-10 left-10",
-      imageUrl: "/images/trash-1.png",
+      imageUrl: asset("/images/trash-1.png"),
     },
     {
       id: 2,
       name: "trash2.png",
-      icon: "/images/image.png",
+      icon: asset("/images/image.png"),
       kind: "file",
       fileType: "img",
       position: "top-40 left-80",
-      imageUrl: "/images/trash-2.png",
+      imageUrl: asset("/images/trash-2.png"),
     },
   ],
 };

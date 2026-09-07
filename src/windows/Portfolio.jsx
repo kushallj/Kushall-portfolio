@@ -3,6 +3,7 @@ import WindowWrapper from '#hoc/WindowWrapper';
 import { gallery, photosLinks } from '#constants';
 import useWindowStore from '#store/window';
 import React, { memo } from 'react';
+import { asset } from '#utils/asset';
 
 const Portfolio = memo(() => {
   const { openWindow } = useWindowStore();
@@ -11,7 +12,7 @@ const Portfolio = memo(() => {
     openWindow('imgfile', {
       id,
       name: 'Gallery image',
-      icon: '/images/image.png',
+      icon: asset('images/image.png'),
       kind: 'file',
       fileType: 'img',
       imageUrl: img,

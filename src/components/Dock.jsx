@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import useWindowStore from '#store/window';
 import useLocationStore from '#store/location';
+import { asset } from '#utils/asset';
 
 const Dock = () => {
     const { windows, openWindow, unminimizeWindow, focusWindow } = useWindowStore();
@@ -138,7 +139,7 @@ const Dock = () => {
                         onClick={(e) => toggleApp({id, canOpen}, e)}
                     >
                         <img
-                            src={`/images/${icon}`}
+                            src={asset(`images/${icon}`)}
                             alt={name}
                             loading='lazy'
                             className={`transition-all duration-200 ${canOpen ? "group-hover:brightness-110" : "opacity-50 grayscale"}`}

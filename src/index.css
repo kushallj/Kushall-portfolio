@@ -7,7 +7,7 @@ body {
   width: 100dvw;
   overflow: hidden;
   height: 100dvh;
-  background-image: url("/images/side-view-man-working-nature.jpg");
+  background-color: #0f172a;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import { Draggable } from 'gsap/Draggable';
 import gsap from 'gsap';
 import React, { useRef } from 'react';
+import { asset } from '#utils/asset';
 
 const projects = locations.work?.children ?? [];
 
@@ -93,7 +94,7 @@ const Home = () => {
             {projects.map((project) => (
                 <li key={project.id} className={clsx("group folder liquid-folder-card", project.windowPosition)}>
                     <img 
-                        src="/images/folder.png" 
+                        src={asset('images/folder.png')} 
                         alt={project.name} 
                         onClick={(e) => handleOpenProjectFinder(project, e)}
                         className="cursor-pointer"

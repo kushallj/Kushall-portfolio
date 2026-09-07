@@ -3,6 +3,7 @@ import { socials } from '#constants';
 import WindowWrapper from '#hoc/WindowWrapper';
 import React, { memo } from 'react';
 import { Mail } from 'lucide-react';
+import { asset } from '#utils/asset';
 
 const Contact = memo(() => {
   return (
@@ -20,7 +21,7 @@ const Contact = memo(() => {
           {/* Profile */}
           <div className="flex items-center gap-4">
             <img
-              src="/images/Kushall.jpg"
+              src={asset('images/Kushall.jpg')}
               alt="Kushall"
               className="w-16 h-16 rounded-full object-cover ring-2 ring-gray-200"
             />

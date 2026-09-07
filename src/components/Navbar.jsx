@@ -3,6 +3,7 @@ import { navIcons, navLinks, locations } from '#constants'
 import React, { useState, useEffect } from 'react'
 import useWindowStore from '#store/window'
 import useLocationStore from '#store/location'
+import { asset } from '#utils/asset'
 
 const Navbar = () => {
   const { openWindow } = useWindowStore();  
@@ -53,7 +54,7 @@ const Navbar = () => {
           className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer group"
           title="About Kushall"
         >
-          <img src='/images/logo.svg' alt='logo' className="w-4 h-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform"/>
+          <img src={asset('images/logo.svg')} alt='logo' className="w-4 h-4 drop-shadow-[0_1px_2px_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform"/>
           <span className='font-semibold text-sm text-gray-900 tracking-tight'>Kushall's Portfolio</span>
         </button>
         <ul className="flex items-center gap-1 max-sm:hidden">

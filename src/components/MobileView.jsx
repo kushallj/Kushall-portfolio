@@ -1,6 +1,7 @@
 import React, { useState, memo, useEffect } from 'react';
 import { Menu, X, User, Briefcase, Mail, FileText } from 'lucide-react';
 import { techStack, socials } from '#constants';
+import { asset } from '#utils/asset';
 
 const MobileView = memo(() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,7 +40,7 @@ const MobileView = memo(() => {
     <div className="space-y-5 sm:space-y-6 px-2">
       <div className="text-center">
         <img 
-          src="/images/Kushall.jpg"
+          src={asset('images/Kushall.jpg')}
           alt="Kushall" 
           className="w-28 h-28 sm:w-32 sm:h-32 rounded-full mx-auto mb-4 object-cover shadow-lg ring-2 ring-blue-400/50"
           loading="lazy"
@@ -142,7 +143,7 @@ const MobileView = memo(() => {
       <div className="bg-linear-to-b from-white/15 to-white/5 backdrop-blur-md border-b border-white/20 px-4 py-3 sm:px-5 sm:py-4 shadow-md">
         <div className="flex items-center justify-between max-w-md mx-auto">
           <div className="flex items-center gap-3 min-w-0">
-            <img src="/images/logo.svg" alt="Logo" className="w-8 h-8 shrink-0" loading="lazy" />
+            <img src={asset('images/logo.svg')} alt="Logo" className="w-8 h-8 shrink-0" loading="lazy" />
             <span className="text-white font-bold text-base sm:text-lg truncate">Kushall's Portfolio</span>
           </div>
           <button
